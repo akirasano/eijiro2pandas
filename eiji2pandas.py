@@ -13,7 +13,7 @@ def extract(l: str):
 
     mr = re.search(r"\{(.+?)\}", word)
     if mr is not None:
-        word = word.replace(mr.group(0), "")
+        word = word.replace(mr.group(0), "").strip()
         part = mr.group(1)
     else:
         part = ""
@@ -22,7 +22,7 @@ def extract(l: str):
 
 
 if __name__ == "__main__":
-    src = "EIJIRO-1448.TXT" if len(sys.argv) == 1 else sys.argv[0]
+    src = "EIJIRO-1448.TXT" if len(sys.argv) == 1 else sys.argv[1]
     base = os.path.splitext(os.path.basename(src))[0]
 
     if pathlib.Path(base + ".pkl").exists():
