@@ -4,9 +4,9 @@
 - Run `python eiji2pandas.py`.
 - "EIJIRO-1448.pkl" will be made.
 
-- * You can buy the EIJIRO text data at https://booth.pm/ja/items/777563.
+- You can buy the EIJIRO text data at https://booth.pm/ja/items/777563.
 
-## look up a word in the dictionary.
+## Look up a word in the dictionary.
 
 - `python lookup.py query [query ...]`
     - Queries will be treated as a regular expression.
