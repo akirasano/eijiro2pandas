@@ -1,6 +1,8 @@
-import sys
 import os
+import sys
+
 from tqdm import tqdm
+
 
 class OpenWithTQDM:
     def __init__(self, src, **kwargs):
@@ -9,13 +11,15 @@ class OpenWithTQDM:
         self.fp = None
         size = os.path.getsize(src)
         self.pbar = tqdm(total=size)
-        self.encoding = kwargs["encoding"] if "encoding" in kwargs else sys.getdefaultencoding()
+        self.encoding = (
+            kwargs["encoding"] if "encoding" in kwargs else sys.getdefaultencoding()
+        )
 
     def __init(self):
         if self.fp is None:
             # overwrite newline arg
             if "newline" in self.kwargs:
-                print("warning: \"newline\" arg does not work.")
+                print('warning: "newline" arg does not work.')
             self.kwargs["newline"] = ""
             self.fp = open(self.src, **self.kwargs)
 
